@@ -1,0 +1,40 @@
+<% include header %>
+	<body class="body-index">
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+			    <% if(validation.length > 0){ %>
+		          <div class="alert alert-danger">
+		          	<strong>Atenção!!!</strong>
+			          <ul>
+				          <% for(var i=0; i < validation.length; i++){%>
+				              <li><%= validation[i].msg %></li>
+				          <% } %>
+			          </ul>
+		          </div>
+		      <% } %>
+					<form class="form-inline form-entrar" action="login" method="post">
+						<div class="form-group">				
+							<input type="text" name="email" id="usuario" value="<%= data.email %>" placeholder="Email" class="form-control" value="<%= data.password %>" autocomplete="off" />
+							<input type="password" name="password" id="senha" placeholder="Senha" class="form-control" />
+							<button type="submit" class="btn btn-success">Entrar</button>
+							<a href="/cadastro" class="btn btn-info">Cadastro</a>
+						</div>
+					</form>
+				</div>
+			
+		</nav>
+
+	    <div class="container">
+	    	<div class="row">
+	    		<div class="col-md-2"></div>
+
+	    		<div class="col-md-8">
+					<img src="images/game_of_thrones_logo.jpg" />
+				</div>
+
+	    		<div class="col-md-2"></div>
+		    	</div>
+	    	</div>
+	    </div>	
+	  </body>  
+<% include footer %>
